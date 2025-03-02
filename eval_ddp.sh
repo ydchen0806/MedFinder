@@ -1,11 +1,6 @@
 #!/bin/bash
 pip install wandb -i https://pypi.tuna.tsinghua.edu.cn/simple
 
-# 设置环境变量
-# export PYTHONPATH=/h3cstore_ns/ydchen/code/MedicalFinder:$PYTHONPATH
-# export WANDB_API_KEY=4dd8899dcb163e86d45644b7c896bfa7ec6af32b
-# export WANDB_PROJECT="MedFinder_a40_eval"
-# export WANDB_NAME="250302_eval"  # 添加eval后缀以区分
 
 # 定义参数
 NUM_GPUS=8  # 使用8个GPU进行评估
