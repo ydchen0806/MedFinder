@@ -3,8 +3,8 @@ pip install wandb -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 # 设置环境变量
 export PYTHONPATH=/h3cstore_ns/ydchen/code/MedicalFinder:$PYTHONPATH
-export WANDB_API_KEY=4dd8899dcb163e86d45644b7c896bfa7ec6af32b
-export WANDB_PROJECT="MedFinder_a40"
+export WANDB_API_KEY=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+export WANDB_PROJECT="MedFinder_a100"
 export WANDB_NAME="250302"  # 与debug命令保持一致
 
 # 定义参数
