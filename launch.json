@@ -1,0 +1,63 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Current File",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": false
+        },
+        {
+            "name": "Python: DDP Debug (Single GPU)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "/h3cstore_ns/ydchen/code/MedicalFinder/main_ddp.py",
+            "args": [
+                "--data_root", "/h3cstore_ns/CT_data/CT_retrieval",
+                "--output_dir", "/h3cstore_ns/ydchen/code/MedicalFinder/output",
+                "--backbone", "resnet50",
+                "--batch_size", "2",
+                "--epochs", "2",
+                "--lr", "1e-4",
+                "--use_amp",
+                "--no_ddp"
+            ],
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}",
+                "CUDA_VISIBLE_DEVICES": "0",
+                "WANDB_API_KEY": "4dd8899dcb163e86d45644b7c896bfa7ec6af32b",
+                "WANDB_PROJECT": "MedFinder",
+                "WANDB_NAME": "250302_debug"
+            }
+        },
+        {
+            "name": "Python: DDP Debug (Multi-GPU)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "/usr/local/bin/torchrun",
+            "args": [
+                "--nproc_per_node=2",
+                "/h3cstore_ns/ydchen/code/MedicalFinder/main_ddp.py",
+                "--data_root", "/h3cstore_ns/CT_data/CT_retrieval",
+                "--output_dir", "/h3cstore_ns/ydchen/code/MedicalFinder/output",
+                "--backbone", "resnet50",
+                "--batch_size", "2",
+                "--epochs", "2",
+                "--lr", "1e-4",
+                "--use_amp"
+            ],
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}",
+                "WANDB_API_KEY": "4dd8899dcb163e86d45644b7c896bfa7ec6af32b",
+                "WANDB_PROJECT": "MedFinder",
+                "WANDB_NAME": "250302_debug_multi"
+            }
+        }
+    ]
+}
