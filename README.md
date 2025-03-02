@@ -1,15 +1,26 @@
 # MedFinder
-This repository contains the official implementation of the paper [BIMCV-R: A Landmark Dataset for 3D CT Text-Image Retrieval](https://arxiv.org/pdf/2403.15992).
+
+This repository contains the official implementation of the paper [BIMCV-R: A Landmark Dataset for 3D CT Text-Image Retrieval](https://arxiv.org/pdf/2403.15992).  
 MedFinder is a multimodal retrieval system for medical imaging and text, specifically designed for CT scans and radiology reports. It leverages contrastive learning and cross-attention mechanisms to build a joint embedding space for effective cross-modal retrieval.
 
-## Features
+## Dataset Availability
 
-- 3D medical image and text retrieval
-- Distributed training with PyTorch DDP
-- Mixed precision training support
-- Weights & Biases integration for experiment tracking
-- Support for multiple visual backbones (ResNet50, ViT)
-- Cross-attention mechanism for improved feature fusion
+Our dataset, **BIMCV-R**, is publicly accessible and can be directly downloaded from **Hugging Face**:  
+🔗 [BIMCV-R on Hugging Face](https://huggingface.co/datasets/cyd0806/BIMCV-R)  
+
+The dataset includes:  
+- **8069** 3D CT volumes  
+- **Over 2 million** 2D CT slices  
+- **Medical reports** paired with each scan  
+
+To access the dataset, you will need to agree to the terms and conditions on the Hugging Face page.
+
+## Features
+- **Multimodal Retrieval**: Supports **text-to-image**, **image-to-text**, and **keyword-based** retrieval.  
+- **Advanced AI Integration**: Utilizes **BiomedCLIP** and **3D vision transformers** for enhanced retrieval accuracy.  
+- **Medical Expert Review**: Data has been carefully curated, translated, and reviewed by medical professionals.  
+
+For more details, check out our paper and dataset page. 🚀
 
 ## Requirements
 
