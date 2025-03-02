@@ -1,7 +1,7 @@
 #!/bin/bash
 # 设置环境变量
 export HF_ENDPOINT=https://hf-mirror.com
-export HUGGINGFACE_HUB_TOKEN=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
+export HUGGINGFACE_HUB_TOKEN=XXXXXXXXXXXXXXXXXXXXXXXXX
 export PIP_INDEX_URL=https://pypi.tuna.tsinghua.edu.cn/simple
 
 # 安装或更新 huggingface_hub 包
