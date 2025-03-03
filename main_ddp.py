@@ -607,7 +607,7 @@ def main():
     
     # Set up wandb if enabled (only on main process)
     if global_rank == 0 and args.use_wandb:
-        os.environ['WANDB_API_KEY'] = '4dd8899dcb163e86d45644b7c896bfa7ec6af32b'
+        os.environ['WANDB_API_KEY'] = 'XXXXXXXXXXXXXXXXXXXXXXXX'
         os.environ['WANDB_PROJECT'] = args.wandb_project
         os.environ['WANDB_NAME'] = args.wandb_name
         wandb.init(
