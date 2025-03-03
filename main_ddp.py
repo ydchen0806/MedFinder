@@ -54,7 +54,7 @@ def set_seed(seed=42):
 
 # Dataset class for BIMCV-R
 class BIMCVRDataset(Dataset):
-    def __init__(self, data_root, split='train', max_text_length=100, transform=None, split_rate = 0.8):
+    def __init__(self, data_root, split='train', max_text_length=100, transform=None, split_rate = 0.7):
         """
         Args:
             data_root: Root directory of the BIMCV-R dataset
@@ -74,8 +74,10 @@ class BIMCVRDataset(Dataset):
         # self.image_resolution = image_resolution
         if self.set == 'train':
             self.data = self.data[:int(len(self.data)*self.split_rate)]
+        elif self.set == 'val':
+            self.data = self.data[int(len(self.data)*self.split_rate):int(len(self.data)*(self.split_rate+0.1))]
         else:
-            self.data = self.data[int(len(self.data)*self.split_rate):]
+            self.data = self.data[int(len(self.data)*(self.split_rate+0.1)):]
         self.father_path = sorted(glob(os.path.join(self.data_root,'CT*','ct','*.nii.gz')))
 
         self.total_report = self.data['Report_en'].values.tolist()
@@ -702,6 +704,7 @@ def main():
     # Wrap model with DDP
     model = DDP(model, device_ids=[local_rank], output_device=local_rank, find_unused_parameters=False)
     
+ 
     # If evaluation only, load pre-trained model
     if args.eval_only:
         # assert args.model_path is not None, "Model path must be provided for evaluation"
